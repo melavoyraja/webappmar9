@@ -1,0 +1,178 @@
+<html>
+<head>
+    <title>Claim Form: ASPCA Pet Health Insurance</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
+    <script src="start.js"></script>
+
+</head>
+<body>
+    <div class="container">
+
+        <form name="form1" action="part2.do" method="post" onsubmit="return sanatize()">
+
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3>
+                        Claim Form
+                        <small>
+                            <span class="label label-danger"> INCLUDE YOUR PET'S MEDICAL RECORDS TO HELP EXPEDITE PROCESSING.</span>
+                        </small>
+                    </h3>
+
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    1. General Information
+                    <div class="pull-right">
+                        Please fill out this form completely. Incomplete forms will delay processing.
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Your Information
+                            <div class="pull-right">
+                                <label class="checkbox-inline"><input type="checkbox" name="checkNewAddress" value="Yes" /> Check here if this is a new address</label>
+                            </div>
+
+                        </div>
+                        <div class="panel-body">
+                            <label for="name">Name:</label><br />
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name" />
+                            <label for="address">Address:</label><br />
+                            <input type="text" class="form-control" id="address" name="address" placeholder="Address" />
+                            <label for="city-state-zip">City, State, Zip:</label><br />
+                            <input type="text" class="form-control" id="city-state-zip" name="city-state-zip" placeholder="City, State, Zip" />
+                            <label for="phone">Phone:</label><br />
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" />
+                            <label for="email">Email:</label><br />
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" />
+
+                        </div>
+                    </div>
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Pet Information
+                        </div>
+                        <div class="panel-body">
+                            <label for="accountNumber">Account Number:</label><br />
+                            <input type="text" class="form-control" id="accountNumber" name="accountNumber" placeholder="Account Number" />
+                            <label for="petName">Name:</label><br />
+                            <input type="text" class="form-control" id="petName" name="petName" placeholder="Name" />
+                            <label for="breed">Breed:</label><br />
+                            <input type="text" class="form-control" id="breed" name="breed" placeholder="Breed" />
+                            <label for="age">Age:</label><br />
+                            <input type="text" class="form-control" id="age" name="age" placeholder="Age" />
+                            <label for="gender">Gender:</label><br />
+                            <input type="text" class="form-control" id="gender" name="gender" placeholder="Gender" />
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <b> 2. Diagnosis/Symptom Information</b>
+                </div>
+                <div class="panel-body">
+                    <label for="diagnosisInfo">Story of Occurrence/Diagnosis - Please describe this incident, including dates, details and symptoms leading up to it.</label><br />
+                    <textarea class="form-control" rows="5" id="diagnosisInfo" name="diagnosisInfo"> </textarea><br />
+
+                    <b>This claim is realted to:</b>
+                    <label class="checkbox-inline"><input type="checkbox" name="claimRelatedTo" value="Accident" /> Accident</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="claimRelatedTo" value="Illiness" /> Illiness</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="claimRelatedTo" value="Wellness" /> Wellness</label> <br /><br />
+
+                    Is this claim an estimate for future treatment?
+                    <label class="radio-inline"><input type="radio" name="futherTreatment" value="Yes" /> Yes</label>
+                    <label class="radio-inline"><input type="radio" name="futherTreatment" value="No" /> No</label><br /><br />
+
+                    <label for="totalAmount"> Total Amount Claimed: </label> <br />
+                    <input type="text" class="form-control" name="totalAmount" id="totalAmount" placeholder="Total Amount Claimed" />
+
+                    <label for="fisrtOccurredDate"> Date illness/injury first occurred: </label> <br />
+                    <input type="date" class="form-control" name="fisrtOccurredDate" id="fisrtOccurredDate" /><br />
+
+                    Send payment to:
+                    <label class="radio-inline"><input type="radio" name="sendPayment" value="Me" /> Me</label>
+                    <label class="radio-inline"><input type="radio" name="sendPayment" value="Veterinarian" /> Veterinarian</label><br /><br />
+
+
+                    <div class="col-xs-3">
+                        <label for="veterinarianName">Veterinarian:</label>
+                        <input type="text" class="form-control" id="veterinarianName" name="veterinarianName" placeholder="Veterinarian Name">
+                    </div>
+
+                    <div class="col-xs-3">
+                        <label for="clinicName">Clinic Name:</label>
+                        <input type="text" class="form-control" id="clinicName" name="clinicName" placeholder="Clinic Name">
+                    </div>
+
+                    <div class="col-xs-3">
+                        <label for="phoneNumber">Phone:</label>
+                        <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Phone">
+                    </div>
+
+                    <div class="col-xs-3">
+                        <label for="fax">Fax:</label>
+                        <input type="text" class="form-control" id="fax" name="fax" placeholder="Fax"><br />
+                    </div>
+
+
+                    Did any other veterinarian treat your pet?:
+                    <label class="radio-inline"><input type="radio" name="anyOtherTreatment" value="Yes" /> Yes</label>
+                    <label class="radio-inline"><input type="radio" name="anyOtherTreatment" value="No" /> No</label><br /><br />
+
+                    Is this a new condition?:
+                    <label class="radio-inline"><input type="radio" name="newCondition" value="Yes" /> Yes</label>
+                    <label class="radio-inline"><input type="radio" name="newCondition" value="No" /> No</label>
+
+
+                </div>
+
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <b> 3. Pet Owner Declaration</b>
+                </div>
+                <div class="panel-body">
+                    <p class="text-justify">
+                        I confirm to the best of my knowledge the above statements are true in every respect.
+                        I understand that the fees listed may not be covered or may exceed my plan benefit.
+                        I understand that I am financially responsible to my veterinarian for the entire treatment.
+                        I understand that this claim cannot be adjusted without itemized receipts.
+                        I also understand that the deliberate misrepresentation of the animal's condition or the omission of any material facts may result in the denial of the claim and/or the cancellation of coverage.
+                        I authorize United States Fire Insurance Company and its business partners to review and obtain a copy of ALL RECORDS including the insurance claim records and medical records as to examination, history, diagnosis, treatment and prognosis with respect to any condition. I further authorize these entities to disclose
+                        identifying information about me and my pet, as well as information about my claim experience, to my veterinarian.
+                    </p>
+                    <label for="signature">Signature of Pet Owner:</label><br />
+                    <input type="text" class="form-control" id="signature" name="signature" placeholder="Signature of Pet Owner" />
+                    <label for="dateSigned">Date:</label><br />
+                    <input type="date" class="form-control" id="dateSigned" name="dateSigned" />
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Form</button>
+        </form>
+        <hr />
+        <div class="footer">
+            <span class="pull-left">E-Mail: claims@aspcapetinsurance.com, Fax: 1-866-888-2495</span>
+            <span class="pull-right">Mail: ASPCA Pet Health Insurance, 3840 Greentree Ave SW, Canton, Ohio 44706</span>
+
+        </div>
+    </div>
+</body>
+</html>
